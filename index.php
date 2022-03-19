@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php language_attributes(); ?>" class="no-js">
 
 <head>
-    <title>Comet | Creative Multi-Purpose HTML Template</title>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="css/bundle.css">
     <link rel="stylesheet" href="css/style.css">
@@ -22,8 +21,12 @@
       ga('create', 'UA-46276885-13', 'auto');
       ga('send', 'pageview');
     </script>
+
+    <?php wp_head(); ?>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+
     <div id="loader">
       <div class="centrize">
         <div class="v-center">
@@ -460,7 +463,9 @@
     <script type="text/javascript" src="js/bundle.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" src="js/main.js"></script>
-  </body>
+
+    <?php wp_footer(); ?>
+</body>
 
 
 </html>
