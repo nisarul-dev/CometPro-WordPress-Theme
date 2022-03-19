@@ -13,6 +13,10 @@
 function commetpro_setup_theme() {
     // Text Domain
     load_theme_textdomain( 'cometpro', get_template_directory() . '/lang' );
+
+    // Theme supports
+    add_theme_support( 'post-thumbnail' );
+    add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'commetpro_setup_theme' );
 
