@@ -85,5 +85,14 @@ function cometpro_conditional_scripts_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'cometpro_conditional_scripts_enqueue' );
 
+// Including Scripts
+function cometpro_scripts_enqueue() {
+    //wp_enqueue_script( 'jq', get_template_directory_uri() . '/js/jquery.js', [], '1.11.3', true );
+    wp_enqueue_script( 'bundle', get_template_directory_uri() . '/js/bundle.js', [ 'jquery' ], '3.3.5', true );
+    wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp', [ 'jquery' ], null, true );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . './js/main.js', [ 'jquery', 'bundle' ], '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'cometpro_scripts_enqueue' );
+
 
 
