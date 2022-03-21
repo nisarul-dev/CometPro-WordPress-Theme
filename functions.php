@@ -75,7 +75,15 @@ function cometpro_styles_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'cometpro_styles_enqueue' );
 
+// Including Conditional Scripts
+function cometpro_conditional_scripts_enqueue() {
+    wp_enqueue_script( 'html5shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', [], null, false );
+    wp_script_add_data( 'html5shim', 'conditional', 'lt IE 9');
 
+    wp_enqueue_script( 'respond', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js', [], null, false );
+    wp_script_add_data( 'respond', 'conditional', 'lt IE 9');
+}
+add_action( 'wp_enqueue_scripts', 'cometpro_conditional_scripts_enqueue' );
 
 
 
