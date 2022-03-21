@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>" class="no-js">
-
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="css/bundle.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Halant:300,400" rel="stylesheet" type="text/css">
-    <!--if lt IE 9
-    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-    script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
-    -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-46276885-13', 'auto');
-      ga('send', 'pageview');
-    </script>
-
     <?php wp_head(); ?>
-  </head>
-  <body <?php body_class(); ?>>
+</head>
+
+<body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <div id="loader">
+    <!-- <div id="loader">
       <div class="centrize">
         <div class="v-center">
           <div id="mask"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
       </div>
-    </div>
+    </div> -->
+
     <header id="topnav">
       <div class="container">
-        <div class="logo"><a href="index.html"><img src="images/logo_light.png" alt="" class="logo-light"><img src="images/logo_dark.png" alt="" class="logo-dark"></a></div>
+        <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri() . '/images' ?>/<?php echo get_template_directory_uri() . '/images' ?>/logo_light.png" alt="" class="logo-light"><img src="<?php echo get_template_directory_uri() . '/images' ?>/logo_dark.png" alt="" class="logo-dark"></a></div>
         <div class="menu-extras">
           <div class="menu-item">
             <div class="cart"><a href="#"><i class="ti-bag"></i><span class="cart-number">2</span></a>
@@ -55,11 +38,11 @@
                 </div>
                 <ul class="nav product-list">
                   <li>
-                    <div class="product-thumbnail"><img src="images/shop/2.jpg" alt=""></div>
+                    <div class="product-thumbnail"><img src="<?php echo get_template_directory_uri() . '/images' ?>/shop/2.jpg" alt=""></div>
                     <div class="product-summary"><a href="#">Premium Suit Blazer</a><span>$199.99</span></div>
                   </li>
                   <li>
-                    <div class="product-thumbnail"><img src="images/shop/5.jpg" alt=""></div>
+                    <div class="product-thumbnail"><img src="<?php echo get_template_directory_uri() . '/images' ?>/shop/5.jpg" alt=""></div>
                     <div class="product-summary"><a href="#">Reiss Vara Tailored Blazer</a><span>$199.99</span></div>
                   </li>
                 </ul>
@@ -240,7 +223,7 @@
       </div>
     </header>
     <section class="page-title parallax">
-      <div data-parallax="scroll" data-image-src="images/bg/18.jpg" class="parallax-bg"></div>
+      <div data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() . '/images' ?>/bg/18.jpg" class="parallax-bg"></div>
       <div class="parallax-overlay">
         <div class="centrize">
           <div class="v-center">
@@ -267,9 +250,9 @@
               <div class="post-media">
                 <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true" class="flexslider nav-outside">
                   <ul class="slides">
-                    <li><img src="images/blog/1.jpg" alt=""></li>
-                    <li><img src="images/blog/2.jpg" alt=""></li>
-                    <li><img src="images/blog/3.jpg" alt=""></li>
+                    <li><img src="<?php echo get_template_directory_uri() . '/images' ?>/blog/1.jpg" alt=""></li>
+                    <li><img src="<?php echo get_template_directory_uri() . '/images' ?>/blog/2.jpg" alt=""></li>
+                    <li><img src="<?php echo get_template_directory_uri() . '/images' ?>/blog/3.jpg" alt=""></li>
                   </ul>
                 </div>
               </div>
@@ -309,7 +292,7 @@
                 <h2><a href="#">Uber Launches in Las Vegas</a></h2>
                 <h6 class="upper"><span>By</span><a href="#"> Admin</a><span class="dot"></span><span>28 September 2015</span><span class="dot"></span><a href="#" class="post-tag">Startups</a></h6>
               </div>
-              <div class="post-media"><a href="#"><img src="images/blog/4.jpg" alt=""></a></div>
+              <div class="post-media"><a href="#"><img src="<?php echo get_template_directory_uri() . '/images' ?>/blog/4.jpg" alt=""></a></div>
               <div class="post-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Repudiandae possimus quas odio nisi optio asperiores, vitae error laudantium, ratione odit ipsa obcaecati debitis deleniti minus, illo maiores placeat omnis magnam.</p>
                 <p><a href="#" class="btn btn-color btn-sm">Read More</a></p>
@@ -459,13 +442,7 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bundle.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script type="text/javascript" src="js/main.js"></script>
 
     <?php wp_footer(); ?>
 </body>
-
-
 </html>

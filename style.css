@@ -14,3 +14,8 @@ Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-backgr
 Text Domain: cometpro
 
 */
+
+/* Top margin space for header topbar in when logged in */
+.admin-bar #topnav {
+    margin-top: 32px;
+}
