@@ -15,8 +15,16 @@ function cometpro_setup_theme() {
     load_theme_textdomain( 'cometpro', get_template_directory() . '/lang' );
 
     // Theme supports
-    add_theme_support( 'post-thumbnail' );
+    add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
+
+    // Post Formats
+    add_theme_support( 'post-formats', [
+        'video',
+        'quote',
+        'gallery',
+        'audio',
+    ] );
 }
 add_action( 'after_setup_theme', 'cometpro_setup_theme' );
 

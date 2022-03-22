@@ -241,7 +241,11 @@
     <section>
       <div class="container">
         <div class="col-md-8">
+
+          <!-- Posts -->
           <div class="blog-posts">
+
+            <!-- Gallery Post -->
             <article class="post-single">
               <div class="post-info">
                 <h2><a href="#">Checklists for Startups</a></h2>
@@ -261,6 +265,8 @@
                 <p><a href="#" class="btn btn-color btn-sm">Read More</a></p>
               </div>
             </article>
+
+            <!-- Video Post -->
             <article class="post-single">
               <div class="post-info">
                 <h2><a href="#">Never Tell People What You Do</a></h2>
@@ -276,6 +282,8 @@
                 <p><a href="#" class="btn btn-color btn-sm">Read More</a></p>
               </div>
             </article>
+
+            <!-- Quote Post -->
             <article class="post-single">
               <div class="post-info">
                 <h2><a href="#">Give It Five Minutes</a></h2>
@@ -287,6 +295,8 @@
                 </blockquote>
               </div>
             </article>
+
+            <!-- Standard Post -->
             <article class="post-single">
               <div class="post-info">
                 <h2><a href="#">Uber Launches in Las Vegas</a></h2>
@@ -298,6 +308,8 @@
                 <p><a href="#" class="btn btn-color btn-sm">Read More</a></p>
               </div>
             </article>
+
+            <!-- Audio Post -->
             <article class="post-single">
               <div class="post-info">
                 <h2><a href="#">Fun With Product Hunt</a></h2>
@@ -324,6 +336,8 @@
             <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="ti-arrow-right"></i></span></a></li>
           </ul>
         </div>
+        <!-- End Posts -->
+
         <div class="col-md-3 col-md-offset-1">
           <div class="sidebar hidden-sm hidden-xs">
             <div class="widget">
