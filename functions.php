@@ -102,5 +102,28 @@ function cometpro_scripts_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'cometpro_scripts_enqueue' );
 
+// Including Libraries
+
+/**
+ * CMB2 - a metabox, custom fields, and forms library
+ *
+ * @version 2.10.1
+ */
+if( file_exists( get_template_directory() . '/inc/cmb2-functions.php' ) ) {
+    require_once get_template_directory() . '/inc/cmb2-functions.php';
+}
+
+/**
+ * Redux Framework - a simple and extensible options framework for WordPress themes and plugins.
+ *
+ * @version 3.6.18
+ */
+if( file_exists( get_template_directory() . './inc/redux-framework/ReduxCore/framework.php' ) ) {
+    require_once get_template_directory() . './inc/redux-framework/ReduxCore/framework.php';
+}
+if( file_exists( get_template_directory() . '/inc/redux-framework/sample/barebones-config.php' ) ) {
+    require_once get_template_directory() . '/inc/redux-framework/sample/barebones-config.php';
+}
+
 
 
