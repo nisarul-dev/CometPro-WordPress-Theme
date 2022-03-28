@@ -98,7 +98,7 @@ function cometpro_scripts_enqueue() {
     //wp_enqueue_script( 'jq', get_template_directory_uri() . '/js/jquery.js', [], '1.11.3', true );
     wp_enqueue_script( 'bundle', get_template_directory_uri() . '/js/bundle.js', [ 'jquery' ], '3.3.5', true );
     wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp', [ 'jquery' ], null, true );
-    wp_enqueue_script( 'main-script', get_template_directory_uri() . './js/main.js', [ 'jquery', 'bundle' ], '1.0.0', true );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', [ 'jquery', 'bundle' ], '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'cometpro_scripts_enqueue' );
 
@@ -118,8 +118,8 @@ if( file_exists( get_template_directory() . '/inc/cmb2-functions.php' ) ) {
  *
  * @version 3.6.18
  */
-if( file_exists( get_template_directory() . './inc/redux-framework/ReduxCore/framework.php' ) ) {
-    require_once get_template_directory() . './inc/redux-framework/ReduxCore/framework.php';
+if( file_exists( get_template_directory() . '/inc/redux-framework/ReduxCore/framework.php' ) ) {
+    require_once get_template_directory() . '/inc/redux-framework/ReduxCore/framework.php';
 }
 if( file_exists( get_template_directory() . '/inc/redux-framework/sample/barebones-config.php' ) ) {
     require_once get_template_directory() . '/inc/redux-framework/sample/barebones-config.php';
