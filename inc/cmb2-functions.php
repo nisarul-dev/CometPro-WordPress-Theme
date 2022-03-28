@@ -38,7 +38,7 @@ function cometpro_register_metabox() {
 	$cmb_demo->add_field( array(
 		'name'         => esc_html__( 'Gallery Slider', 'cmb2' ),
 		'desc'         => esc_html__( 'Upload or add multiple images', 'cmb2' ),
-		'id'           => 'cometpro_demo_file_list',
+		'id'           => 'cometpro_gallery_embed',
 		'type'         => 'file_list',
 		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	) );
