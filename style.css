@@ -19,3 +19,54 @@ Text Domain: cometpro
 .admin-bar #topnav {
     margin-top: 32px;
 }
+
+/* Here comes the game */
+.pagination .nav-links>a,
+.pagination .nav-links>span {
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.pagination {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+.pagination .nav-links a,
+.pagination .nav-links span {
+    display: inline-block;
+}
+.pagination .nav-links > span.current {
+    background-color: #EF2D56;
+    border-color: #EF2D56;
+    color: #fff;
+}
+.pagination .nav-links > span.current:hover {
+  background-color: transparent;
+  color: #EF2D56;
+  border-color: #EF2D56;
+}
+.pagination .nav-links > span.current:focus {
+  background-color: #EF2D56;
+  border-color: #EF2D56;
+  color: #fff;
+}
+.pagination .nav-links > a {
+  color: #191b1d;
+  border-color: transparent;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: transparent;
+}
+.pagination .nav-links > a:hover {
+  background-color: #191b1d;
+  color: #fff;
+  border-color: #191b1d;
+}
+.pagination .nav-links > a:focus {
+  background-color: transparent;
+  border-color: transparent;
+  color: #EF2D56;
+}

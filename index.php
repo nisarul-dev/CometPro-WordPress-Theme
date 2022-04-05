@@ -255,6 +255,16 @@
               endif;
             ?>
           </div>
+
+          <?php
+          if( function_exists( 'the_posts_pagination' ) ) {
+              the_posts_pagination( [
+              'prev_text' => '<span aria-hidden="true"><i class="ti-arrow-left"></i></span>',
+              'next_text' => '<span aria-hidden="true"><i class="ti-arrow-right"></i></span>',
+            ] );
+          }
+          ?>
+
           <ul class="pagination">
             <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="ti-arrow-left"></i></span></a></li>
             <li class="active"><a href="#">1</a></li>
