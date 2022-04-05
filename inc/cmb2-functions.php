@@ -21,7 +21,7 @@ function cometpro_register_metabox() {
 	// SoundCloud
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'SoundCloud Link', 'cmb2' ),
-		'desc' => esc_html__( 'Enter a SoundCloud video URL', 'cmb2' ),
+		'desc' => esc_html__( 'Enter a SoundCloud URL', 'cmb2' ),
 		'id'   => 'cometpro_soundcloud_embed',
 		'type' => 'oembed',
 	) );
