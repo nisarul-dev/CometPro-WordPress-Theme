@@ -131,5 +131,26 @@ if( file_exists( get_template_directory() . '/inc/redux-framework/sample/barebon
     require_once get_template_directory() . '/inc/redux-framework/sample/barebones-config.php';
 }
 
+/**
+ * Registering Siderbars
+ */
+function cometpro_sidebars_setup() {
+    register_sidebar( [
+        'id'          => 'right-sidebar',
+        'name'        => __('Right Sidebar', 'cometpro'),
+        'description' => __('Add widgets for Right Sidebar', 'cometpro'),
+        'class'       => 'custom',
+        'before_widget'  => '<div class="widget">',
+        'after_widget'   => "</div>\n",
+        'before_title'   => '<h6 class="upper">',
+        'after_title'    => "</h6>\n",
+    ] );
+}
+add_action( 'widgets_init', 'cometpro_sidebars_setup' );
 
-
+/**
+ * Custom widgets.
+ */
+if( file_exists( get_template_directory() . '/inc/custom-widgets/youtube-subs.php' ) ) {
+    require_once get_template_directory() . '/inc/custom-widgets/youtube-subs.php';
+}

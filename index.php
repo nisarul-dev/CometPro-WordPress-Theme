@@ -268,6 +268,7 @@
         <!-- End Posts -->
 
         <div class="col-md-3 col-md-offset-1">
+          <?php get_sidebar(); ?>
           <div class="sidebar hidden-sm hidden-xs">
             <div class="widget">
               <h6 class="upper">Search blog</h6>
