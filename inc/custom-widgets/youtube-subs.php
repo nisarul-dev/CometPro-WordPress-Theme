@@ -102,7 +102,7 @@ class Youtube_Subs_Widget extends WP_Widget {
         return $instance;
     }
 
-} // class Foo_Widget
+} // class Youtube_Subs_Widget
 
 function cometpro_youtube_subs_widget() {
     register_widget( 'Youtube_Subs_Widget' );
