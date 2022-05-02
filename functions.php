@@ -154,3 +154,6 @@ add_action( 'widgets_init', 'cometpro_sidebars_setup' );
 if( file_exists( get_template_directory() . '/inc/custom-widgets/youtube-subs.php' ) ) {
     require_once get_template_directory() . '/inc/custom-widgets/youtube-subs.php';
 }
+if( file_exists( get_template_directory() . '/inc/custom-widgets/latest-posts.php' ) ) {
+    require_once get_template_directory() . '/inc/custom-widgets/latest-posts.php';
+}

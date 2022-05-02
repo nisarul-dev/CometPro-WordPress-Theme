@@ -16,7 +16,7 @@ class Youtube_Subs_Widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'yb-subs', // Base ID
-            esc_html__( 'Youtube Subs Widget', 'cometpro' ), // Name
+            esc_html__( 'CometPro Youtube Subs Widget', 'cometpro' ), // Name
             array( 'description' => esc_html__( 'Subscribe button for your youtube channel', 'cometpro' ), ) // Args
         );
     }
