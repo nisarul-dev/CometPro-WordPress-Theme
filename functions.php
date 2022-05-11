@@ -135,15 +135,40 @@ if( file_exists( get_template_directory() . '/inc/redux-framework/sample/barebon
  * Registering Siderbars
  */
 function cometpro_sidebars_setup() {
+    // Right Sidebar
     register_sidebar( [
-        'id'          => 'right-sidebar',
-        'name'        => __('Right Sidebar', 'cometpro'),
-        'description' => __('Add widgets for Right Sidebar', 'cometpro'),
-        'class'       => 'custom',
-        'before_widget'  => '<div class="widget">',
-        'after_widget'   => "</div>\n",
-        'before_title'   => '<h6 class="upper">',
-        'after_title'    => "</h6>\n",
+        'id'            => 'right-sidebar',
+        'name'          => __('Right Sidebar', 'cometpro'),
+        'description'   => __('Add widgets for Right Sidebar', 'cometpro'),
+        'class'         => 'custom',
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => "</div>\n",
+        'before_title'  => '<h6 class="upper">',
+        'after_title'   => "</h6>\n",
+    ] );
+
+    // Footer Left col-md-6
+    register_sidebar( [
+        'id'            => 'footer-left',
+        'name'          => __('Footer Left Area (col-md-6)', 'cometpro'),
+        'description'   => __('Add widgets for Footer Left Area', 'cometpro'),
+        'class'         => 'custom',
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => "</div>\n",
+        'before_title'  => '<h6 class="upper">',
+        'after_title'   => "</h6>\n",
+    ] );
+
+    // Footer Right col-md-4
+    register_sidebar( [
+        'id'            => 'footer-right',
+        'name'          => __('Footer Right Area (col-md-4)', 'cometpro'),
+        'description'   => __('Add widgets for Footer Right Area', 'cometpro'),
+        'class'         => 'custom',
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => "</div>\n",
+        'before_title'  => '<h6 class="upper">',
+        'after_title'   => "</h6>\n",
     ] );
 }
 add_action( 'widgets_init', 'cometpro_sidebars_setup' );
