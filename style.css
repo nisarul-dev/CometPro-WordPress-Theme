@@ -108,3 +108,10 @@ Text Domain: cometpro
   border-color: #EF2D56;
   color: #fff;
 }
+
+/* Footer Style */
+
+footer .widget ul {
+    padding-left: 0 !important;
+    list-style: none !important;
+}

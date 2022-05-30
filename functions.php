@@ -153,8 +153,8 @@ function cometpro_sidebars_setup() {
         'name'          => __('Footer Left Area (col-md-6)', 'cometpro'),
         'description'   => __('Add widgets for Footer Left Area', 'cometpro'),
         'class'         => 'custom',
-        'before_widget' => '<div class="widget">',
-        'after_widget'  => "</div>\n",
+        'before_widget' => '<div class="col-sm-4"><div class="widget">',
+        'after_widget'  => "</div></div>\n",
         'before_title'  => '<h6 class="upper">',
         'after_title'   => "</h6>\n",
     ] );
