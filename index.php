@@ -283,23 +283,11 @@
           // Footer Left Area
           get_sidebar('footer-left');
         ?>
-        </div>
-        <div class="col-md-4 col-md-offset-2">
-          <div class="col-md-12">
-            <div class="widget">
-              <h6 class="upper">Stay in touch</h6>
-              <p>Sign Up to get the latest updates.</p>
-              <div class="footer-newsletter">
-                <div class="inline-form">
-                  <div class="input-group">
-                    <input type="text" placeholder="Your Email" class="form-control"><span class="input-group-btn">
-                      <button type="button" class="btn btn-color">Subscribe</button></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <?php
+          // Footer Left Area
+          get_sidebar('footer-right');
+        ?>
       </div>
     </footer>
     <footer id="footer">

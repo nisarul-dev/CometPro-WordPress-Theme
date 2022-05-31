@@ -114,4 +114,25 @@ Text Domain: cometpro
 footer .widget ul {
     padding-left: 0 !important;
     list-style: none !important;
+    display: flex;
+    flex-direction: column;
+}
+footer .input-group {
+    display: flex;
+}
+footer .wpcf7-form-control-wrap {
+    width: 65%;
+}
+
+@media (max-width: 767px) {
+  footer .inline-form .form-control {
+    border-right: 1px solid #494e53 !important;
+    margin-bottom: 10px;
+  }
+  footer .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+  footer .input-group {
+    flex-direction: column;
+  }
 }
