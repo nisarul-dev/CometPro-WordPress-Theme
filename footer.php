@@ -1,3 +1,4 @@
+<?php global $redux_data; //print_r( $redux_data ); echo "Find me here"; ?>
     <footer id="footer-widgets">
       <div class="container">
         <div class="go-top"><a href="#top"><i class="ti-arrow-up"></i></a></div>
@@ -7,7 +8,7 @@
         ?>
 
         <?php
-          // Footer Left Area
+          // Footer Right Area
           get_sidebar('footer-right');
         ?>
       </div>
@@ -17,7 +18,7 @@
         <div class="footer-wrap">
           <div class="col-md-4">
             <div class="copy-text">
-              <p><i class="icon-heart red mr-15"></i>© 2015 Comet Agency.</p>
+              <p><i class="icon-heart red mr-15"></i><?php echo esc_html( $redux_data['copyright-text'] ); ?></p>
             </div>
           </div>
           <div class="col-md-4">
@@ -31,11 +32,10 @@
           <div class="col-md-4">
             <div class="footer-social">
               <ul>
-                <li><a target="_blank" href="#"><i class="ti-facebook"></i></a></li>
-                <li><a target="_blank" href="#"><i class="ti-twitter-alt"></i></a></li>
-                <li><a target="_blank" href="#"><i class="ti-linkedin"></i></a></li>
-                <li><a target="_blank" href="#"><i class="ti-instagram"></i></a></li>
-                <li><a target="_blank" href="#"><i class="ti-dribbble"></i></a></li>
+                <li><a target="_blank" href="<?php echo esc_url( $redux_data['facebook-link'] ); ?>"><i class="ti-facebook"></i></a></li>
+                <li><a target="_blank" href="<?php echo esc_url( $redux_data['twitter-link'] ); ?>"><i class="ti-twitter-alt"></i></a></li>
+                <li><a target="_blank" href="<?php echo esc_url( $redux_data['linkedin-link'] ); ?>"><i class="ti-linkedin"></i></a></li>
+                <li><a target="_blank" href="<?php echo esc_url( $redux_data['instagram-link'] ); ?>"><i class="ti-instagram"></i></a></li>
               </ul>
             </div>
           </div>

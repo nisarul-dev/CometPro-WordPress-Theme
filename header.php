@@ -1,3 +1,4 @@
+<?php global $redux_data; // print_r( $redux_data[ 'logo-light' ][ 'url' ] ); ?>
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>" class="no-js">
 <head>
@@ -19,7 +20,7 @@
 
     <header id="topnav">
       <div class="container">
-        <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri() . '/images' ?>/<?php echo get_template_directory_uri() . '/images' ?>/logo_light.png" alt="" class="logo-light"><img src="<?php echo get_template_directory_uri() . '/images' ?>/logo_dark.png" alt="" class="logo-dark"></a></div>
+        <div class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_attr( $redux_data[ 'logo-light' ][ 'url' ] ); ?>" alt="" class="logo-light"><img src="<?php echo esc_attr( $redux_data[ 'logo-dark' ][ 'url' ] ); ?>" alt="" class="logo-dark"></a></div>
         <div class="menu-extras">
           <div class="menu-item">
             <div class="cart"><a href="#"><i class="ti-bag"></i><span class="cart-number">2</span></a>

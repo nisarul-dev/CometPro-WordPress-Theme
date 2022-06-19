@@ -10,7 +10,7 @@
     }
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "redux_demo";
+    $opt_name = "redux_data";
 
     /**
      * ---> SET ARGUMENTS
@@ -32,8 +32,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Sample Options', 'redux-framework-demo' ),
-        'page_title'           => __( 'Sample Options', 'redux-framework-demo' ),
+        'menu_title'           => __( 'Theme Options', 'redux-framework-demo' ),
+        'page_title'           => __( 'CometPro Theme Options', 'redux-framework-demo' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -51,9 +51,9 @@
         // Choose an priority for the admin bar menu
         'global_variable'      => '',
         // Set a different name for your global variable other than the opt_name
-        'dev_mode'             => true,
+        'dev_mode'             => false,
         // Show the time the page took to load, etc
-        'update_notice'        => true,
+        'update_notice'        => false,
         // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
         'customizer'           => true,
         // Enable basic customizer support
@@ -61,7 +61,7 @@
         //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
 
         // OPTIONAL -> Give you extra features
-        'page_priority'        => null,
+        'page_priority'        => 60,
         // Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
         'page_parent'          => 'themes.php',
         // For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters
@@ -237,65 +237,141 @@
      */
 
     // -> START Basic Fields
+
     Redux::setSection( $opt_name, array(
-        'title'  => __( 'Basic Field', 'redux-framework-demo' ),
-        'id'     => 'basic',
-        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo' ),
-        'icon'   => 'el el-home',
+        'title'  => __( 'General Options', 'cometpro' ),
+        'id'     => 'general-options',
+        'desc'   => __( 'Fill up basic fields of your WordPress Site.', 'cometpro' ),
+        'icon'   => 'el el-edit',
         'fields' => array(
             array(
-                'id'       => 'opt-text',
+                'id'       => 'logo-light',
+                'type'     => 'media',
+                'title'    => __( 'Upload Light Logo', 'cometpro' ),
+                'desc'     => __( 'PNG or WebP image is preffered.', 'cometpro' ),
+                'default'  => array(
+                    'url'    => get_template_directory_uri() . '/images/logo_light.png',
+                ),
+            ),
+            array(
+                'id'       => 'logo-dark',
+                'type'     => 'media',
+                'title'    => __( 'Upload Dark Logo', 'cometpro' ),
+                'desc'     => __( 'PNG or WebP image is preffered.', 'cometpro' ),
+                'default'  => array(
+                    'url'    => get_template_directory_uri() . '/images/logo_dark.png',
+                ),
+            ),
+            array(
+                'id'       => 'blog-title',
                 'type'     => 'text',
-                'title'    => __( 'Example Text', 'redux-framework-demo' ),
-                'desc'     => __( 'Example description.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Example subtitle.', 'redux-framework-demo' ),
-                'hint'     => array(
-                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-                )
-            )
+                'title'    => __( 'Blog Page Title', 'cometpro' ),
+                'desc'     => __( 'Blog archive page heading title.', 'cometpro' ),
+                'default'  => 'This is our blog',
+            ),
+            array(
+                'id'       => 'blog-subtitle',
+                'type'     => 'text',
+                'title'    => __( 'Blog Page Subtitle', 'cometpro' ),
+                'desc'     => __( 'Blog archive page heading subtitle.', 'cometpro' ),
+                'default'  => 'We have a few tips for you.',
+            ),
         )
     ) );
 
-    Redux::setSection( $opt_name, array(
-        'title' => __( 'Basic Fields', 'redux-framework-demo' ),
-        'id'    => 'basic',
-        'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo' ),
-        'icon'  => 'el el-home'
-    ) );
 
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Text', 'redux-framework-demo' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',
-        'id'         => 'opt-text-subsection',
-        'subsection' => true,
-        'fields'     => array(
+        'title'  => __( 'Footer Options', 'cometpro' ),
+        'id'     => 'footer-options',
+        'icon'   => 'el el-chevron-down',
+        'fields' => array(
             array(
-                'id'       => 'text-example',
+                'id'       => 'copyright-text',
                 'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-demo' ),
-                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                'default'  => 'Default Text',
+                'title'    => __( 'Footer Copyright Text', 'cometpro' ),
+                'default'  => '&copy; 2015 Comet Agency.',
             ),
         )
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Text Area', 'redux-framework-demo' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">//docs.reduxframework.com/core/fields/textarea/</a>',
-        'id'         => 'opt-textarea-subsection',
-        'subsection' => true,
-        'fields'     => array(
+        'title'  => __( 'Social Links', 'cometpro' ),
+        'id'     => 'social-links',
+        'desc'   => __( 'Link your social media handles.', 'cometpro' ),
+        'icon'   => 'el el-facebook',
+        'fields' => array(
             array(
-                'id'       => 'textarea-example',
-                'type'     => 'textarea',
-                'title'    => __( 'Text Area Field', 'redux-framework-demo' ),
-                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                'default'  => 'Default Text',
+                'id'       => 'facebook-link',
+                'type'     => 'text',
+                'title'    => __( 'Facebook Handle', 'cometpro' ),
+                'desc'     => __( 'ex. https://www.facebook.com/username', 'cometpro' ),
+                'default'  => 'https://www.facebook.com/NisarulAmin',
+            ),
+            array(
+                'id'       => 'twitter-link',
+                'type'     => 'text',
+                'title'    => __( 'Twitter Handle', 'cometpro' ),
+                'desc'     => __( 'ex. https://twitter.com/username', 'cometpro' ),
+                'default'  => 'https://twitter.com/itzrohulamin',
+            ),
+            array(
+                'id'       => 'linkedin-link',
+                'type'     => 'text',
+                'title'    => __( 'LinkedIn Handle', 'cometpro' ),
+                'desc'     => __( 'ex. https://www.linkedin.com/in/username', 'cometpro' ),
+                'default'  => 'https://www.linkedin.com/in/nisarul',
+            ),
+            array(
+                'id'       => 'instagram-link',
+                'type'     => 'text',
+                'title'    => __( 'Instagram Handle', 'cometpro' ),
+                'desc'     => __( 'ex. https://www.instagram.com/username', 'cometpro' ),
+                'default'  => 'https://www.instagram.com/NisarulAminNaim/',
             ),
         )
     ) );
+
+    // Subsections
+    // Redux::setSection( $opt_name, array(
+    //     'title' => __( 'Basic Fields', 'redux-framework-demo' ),
+    //     'id'    => 'basic',
+    //     'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo' ),
+    //     'icon'  => 'el el-home'
+    // ) );
+
+    // Redux::setSection( $opt_name, array(
+    //     'title'      => __( 'Text', 'redux-framework-demo' ),
+    //     'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',
+    //     'id'         => 'opt-text-subsection',
+    //     'subsection' => true,
+    //     'fields'     => array(
+    //         array(
+    //             'id'       => 'text-example',
+    //             'type'     => 'text',
+    //             'title'    => __( 'Text Field', 'redux-framework-demo' ),
+    //             'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+    //             'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+    //             'default'  => 'Default Text',
+    //         ),
+    //     )
+    // ) );
+
+    // Redux::setSection( $opt_name, array(
+    //     'title'      => __( 'Text Area', 'redux-framework-demo' ),
+    //     'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">//docs.reduxframework.com/core/fields/textarea/</a>',
+    //     'id'         => 'opt-textarea-subsection',
+    //     'subsection' => true,
+    //     'fields'     => array(
+    //         array(
+    //             'id'       => 'textarea-example',
+    //             'type'     => 'textarea',
+    //             'title'    => __( 'Text Area Field', 'redux-framework-demo' ),
+    //             'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+    //             'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+    //             'default'  => 'Default Text',
+    //         ),
+    //     )
+    // ) );
 
     /*
      * <--- END SECTIONS

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); global $redux_data; ?>
     <section class="page-title parallax">
       <div data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() . '/images' ?>/bg/18.jpg" class="parallax-bg"></div>
       <div class="parallax-overlay">
@@ -6,8 +6,8 @@
           <div class="v-center">
             <div class="container">
               <div class="title center">
-                <h1 class="upper">This is our blog<span class="red-dot"></span></h1>
-                <h4>We have a few tips for you.</h4>
+                <h1 class="upper"><?php echo esc_html( $redux_data[ 'blog-title' ] ); ?><span class="red-dot"></span></h1>
+                <h4><?php echo esc_html( $redux_data[ 'blog-subtitle' ] ); ?></h4>
                 <hr>
               </div>
             </div>
