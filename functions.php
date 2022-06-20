@@ -104,7 +104,10 @@ add_action( 'wp_enqueue_scripts', 'cometpro_scripts_enqueue' );
 
 // Including Admin Scripts
 function cometpro_admin_scripts_enqueue() {
-    wp_enqueue_script( 'admin-script', get_template_directory_uri() . '/js/admin-dashboard.js', [], '1.0.0', true );
+    global $pagenow;
+    if( get_post_type() == 'post' && $pagenow == 'post.php' ) {
+        wp_enqueue_script( 'admin-script', get_template_directory_uri() . '/js/admin-dashboard.js', [], '1.0.0', true );
+    }
 }
 add_action( 'admin_enqueue_scripts', 'cometpro_admin_scripts_enqueue' );
 
