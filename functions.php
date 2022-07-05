@@ -135,6 +135,22 @@ if( file_exists( get_template_directory() . '/inc/lib/redux-framework/sample/bar
 }
 
 /**
+ * Registering Menus
+ */
+if( file_exists( get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php' ) ) {
+    require_once get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php';
+}
+
+function cometpro_register_menus() {
+    add_theme_support( 'menus' );
+
+    register_nav_menus( [
+        'main-menu' => 'Header Navigation Menu',
+    ] );
+}
+add_action( 'after_setup_theme', 'cometpro_register_menus' );
+
+/**
  * Registering Siderbars
  */
 function cometpro_sidebars_setup() {
