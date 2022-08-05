@@ -135,10 +135,17 @@ if( file_exists( get_template_directory() . '/inc/lib/redux-framework/sample/bar
 }
 
 /**
- * Registering Menus
+ * Custom Nav Walker Class - Commetpro_Header_Nav_Menu
  */
 if( file_exists( get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php' ) ) {
     require_once get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php';
+}
+
+/**
+ * WP Backend "Menu Page" Editing
+ */
+if( file_exists( get_template_directory() . '/inc/custom-mega-menu/custom-wp-admin-nav-menus.php' ) ) {
+    require_once get_template_directory() . '/inc/custom-mega-menu/custom-wp-admin-nav-menus.php';
 }
 
 function cometpro_register_menus() {

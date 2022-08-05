@@ -68,10 +68,10 @@
         </div>
           <?php wp_nav_menu( [
             'theme_location' => 'main-menu',
-            'container_id'         => 'navigation',
-            'menu_class'           => 'navigation-menu',
+            'container_id'   => 'navigation',
+            'menu_class'     => 'navigation-menu',
             'items_wrap'     => '<ul id="%1$s" class="dropdown %2$s"  data-dropdown-menu>%3$s</ul>',
-            'walker'      => new Commetpro_Header_Nav_Menu(),
+            'walker'         => new Commetpro_Header_Nav_Menu(),
           ] ); ?>
       </div>
     </header>

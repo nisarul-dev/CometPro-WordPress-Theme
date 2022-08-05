@@ -2,6 +2,9 @@
 
 class Commetpro_Header_Nav_Menu extends Walker_Nav_Menu {
 
+    public $megamenu = '';
+    public static $no_submenu_arr = [];
+
     public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
         $id_field = $this->db_fields['id'];
         $id       = $element->$id_field;
@@ -27,6 +30,8 @@ class Commetpro_Header_Nav_Menu extends Walker_Nav_Menu {
         // Default class.
         $classes = array( 'submenu' );
 
+        if( $this->megamenu != '' ) $classes[] = $this->megamenu;
+
         $class_names = implode( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
@@ -49,6 +54,12 @@ class Commetpro_Header_Nav_Menu extends Walker_Nav_Menu {
         // Restores the more descriptive, specific name for use within this method.
         $menu_item = $data_object;
 
+        if(in_array( $menu_item->menu_item_parent, self::$no_submenu_arr ) ) {
+            self::$no_submenu_arr[] = $menu_item->ID;
+        } elseif($menu_item->megamenu == 'Megamenu Columns') {
+            self::$no_submenu_arr[] = $menu_item->ID;
+        }
+
         if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
             $t = '';
             $n = '';
@@ -63,10 +74,18 @@ class Commetpro_Header_Nav_Menu extends Walker_Nav_Menu {
 
         // Adding 'has-submenu' class in <li> tag if there is a submenu
         if( $args->has_children ) {
-            $classes[] = 'has-submenu';
+            if( !in_array( $menu_item->ID, self::$no_submenu_arr ) || $menu_item->megamenu == 'Megamenu Columns'  ) {
+                $classes[] = 'has-submenu';
+            }
         }
         if( $menu_item->current ) {
             $classes[] = 'active';
+        }
+
+        if( $menu_item->megamenu == 'Megamenu Columns' && $depth == 0 ) {
+            $this->megamenu = 'megamenu';
+        } else {
+            $this->megamenu = '';
         }
 
         // Deleting 'menu-item' class from <li> tags.
