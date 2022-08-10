@@ -209,10 +209,18 @@ if( file_exists( get_template_directory() . '/inc/custom-widgets/latest-posts.ph
     require_once get_template_directory() . '/inc/custom-widgets/latest-posts.php';
 }
 
+
+/**
+ * Shortcodes
+ */
+if ( file_exists( get_template_directory() . '/inc/shortcodes/shortcodes.php' ) ) {
+    require_once get_template_directory() . '/inc/shortcodes/shortcodes.php';
+}
+
 /**
  * Custom Post Type: Portfolio
  */
-function cometpro_custom_post_type (){
+function cometpro_portfolio_custom_post_type() {
 
     $labels = array(
         'name'               => 'Portfolio',
@@ -244,10 +252,52 @@ function cometpro_custom_post_type (){
             'thumbnail',
             'revisions',
         ),
-        'taxonomies'         => array('category', 'post_tag'),
+        'taxonomies'         => array( 'category', 'post_tag' ),
         'menu_position'      => 5,
         'exclude_from_search'=> false
     );
-    register_post_type( 'portfolio',$args );
+    register_post_type( 'portfolio', $args );
 }
-add_action( 'init','cometpro_custom_post_type' );
+add_action( 'init','cometpro_portfolio_custom_post_type' );
+
+/**
+ * Custom Post Type: Simple Sliders
+ */
+function cometpro_simple_slider_custom_post_type() {
+
+    $labels = array(
+        'name'               => 'Simple Slider',
+        'singular_name'      => 'Slide',
+        'add_new'            => 'Add New Slide',
+        'all_items'          => 'All Slides',
+        'add_new_item'       => 'Add New Slide',
+        'edit_item'          => 'Edit Slide',
+        'new_item'           => 'New Slide',
+        'view_item'          => 'View Slide',
+        'search_item'        => 'Search Slide',
+        'not_found'          => 'No slides found',
+        'not_found_in_trash' => 'No slides found in trash',
+        'parent_item_colon'  => 'Parent Item'
+    );
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'publicly_queryable' => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'hierarchical'       => false,
+        'supports'           => array(
+            'title',
+            'editor',
+            'thumbnail',
+            'revisions',
+        ),
+        'taxonomies'         => array( ),
+        'menu_position'      => 5,
+        'exclude_from_search'=> false
+    );
+    register_post_type( 'simple_slider', $args );
+}
+add_action( 'init', 'cometpro_simple_slider_custom_post_type' );
