@@ -290,7 +290,7 @@ function cometpro_simple_slider_custom_post_type() {
         'hierarchical'       => false,
         'supports'           => array(
             'title',
-            'editor',
+            // 'editor',
             'thumbnail',
             'revisions',
         ),
@@ -298,6 +298,6 @@ function cometpro_simple_slider_custom_post_type() {
         'menu_position'      => 5,
         'exclude_from_search'=> false
     );
-    register_post_type( 'simple_slider', $args );
+    register_post_type( 'simple_slider', $args ); // Warning! I Should have used 'simple-slider' as a post type key.
 }
 add_action( 'init', 'cometpro_simple_slider_custom_post_type' );

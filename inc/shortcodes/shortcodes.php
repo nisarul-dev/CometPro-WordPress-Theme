@@ -25,8 +25,22 @@ function simple_slider_fnc( $atts, $content = null ) {
               <div class="slide-content">
                 <div class="container">
                   <h1><?php the_title(); ?><span class="red-dot"></span></h1>
-                  <h6><?php the_content(); ?></h6>
-                  <p><a href="#" class="btn btn-light-out">Read More</a><a href="#" class="btn btn-color btn-full">Services</a></p>
+                  <h6><?php echo esc_html__( get_post_meta( get_the_ID(), 'simple-slider-subtitle', 1 ), 'cometpro' ); ?></h6>
+                  <p>
+                    <?php
+                      $button_fields_arr = get_post_meta( get_the_ID(), '_button_fields', 1 );
+                      foreach ( $button_fields_arr as $buttion_field ) :
+                        if ( $buttion_field['_simple_slider_button_style'] == 'style-one' ) {
+                          $style_class = 'btn-light-out';
+                        } elseif ( $buttion_field['_simple_slider_button_style'] == 'style-two' ) {
+                          $style_class = 'btn-color btn-full';
+                        }
+                    ?>
+                    <a href="#" class="btn <?php echo $style_class; ?>">
+                      <?php echo esc_html__( $buttion_field['_simple_slider_button_text'], 'cometpro' ); ?>
+                    </a>
+                    <?php endforeach; ?>
+                  </p>
                 </div>
               </div>
             </div>
