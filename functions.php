@@ -301,3 +301,12 @@ function cometpro_simple_slider_custom_post_type() {
     register_post_type( 'simple_slider', $args ); // Warning! I Should have used 'simple-slider' as a post type key.
 }
 add_action( 'init', 'cometpro_simple_slider_custom_post_type' );
+
+/**
+ * To refresh Permalink
+ */
+function cometpro_refresh_permalink() {
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'cometpro_refresh_permalink' );
+
