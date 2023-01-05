@@ -233,6 +233,77 @@ function vision_fnc( $atts, $content = null ) {
 add_shortcode( 'cometpro_vision', 'vision_fnc' );
 
 
+// Home Portfolio Section shortcode (Home page)
+function portfolio_fnc( $atts, $content = null ) {
+    $atts = shortcode_atts( [
+        'title'      => 'SELECTED WORKS',
+        'post_count' => 8,
+    ], $atts );
+    extract( $atts );
+    ob_start();
+    ?>
+
+    <section id="portfolio" class="pb-0">
+      <div class="container">
+        <div class="col-md-6">
+          <div class="title m-0 txt-xs-center txt-sm-center">
+            <h2 class="upper"><?php echo $title; ?><span class="red-dot"></span></h2>
+            <hr>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul id="filters" class="no-fix mt-25">
+
+            <li data-filter="*" class="active">All</li>
+            <?php $term_obj_list = get_terms( 'cometpro_portfolio_category' );
+            foreach ( $term_obj_list as $term_obj ): ?>
+            <li data-filter=".<?php echo $term_obj->slug; ?>"><?php echo $term_obj->name; ?></li>
+            <?php endforeach;?>
+
+          </ul>
+        </div>
+      </div>
+      <div class="section-content pb-0">
+        <div id="works" class="four-col wide mt-50">
+
+          <?php
+          $portfolio_query = new WP_Query( [
+                  'post_type'      => 'portfolio',
+                  'posts_per_page' => $post_count,
+              ] );
+              if ( $portfolio_query->have_posts() ):
+                  while ( $portfolio_query->have_posts() ):
+                      $portfolio_query->the_post();
+
+                      $term_obj_list = get_the_terms( get_the_ID(), 'cometpro_portfolio_category' );
+                      $terms_string_comma = implode( ', ', wp_list_pluck( $term_obj_list, 'name' ) );
+                      $terms_string_space = implode( ' ', wp_list_pluck( $term_obj_list, 'slug' ) );
+          ?>
+          <div class="work-item <?php echo $terms_string_space; ?>">
+            <div class="work-detail"><a href="portfolio-single-1.html"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+              <div class="work-info">
+                <div class="centrize">
+                  <div class="v-center">
+                    <h3><?php the_title();?></h3>
+                    <p><?php echo $terms_string_comma; ?>
+                    </p>
+                  </div>
+                </div>
+              </div></a>
+            </div>
+          </div>
+          <?php endwhile;endif;
+          wp_reset_postdata();?>
+
+        </div>
+      </div>
+    </section>
+
+    <?php return ob_get_clean();
+}
+add_shortcode( 'cometpro_portfolio', 'portfolio_fnc' );
+
+
 // Brand logos shortcode (Home page)
 function brand_logos_fnc( $atts, $content = null ) {
     $atts = shortcode_atts( [

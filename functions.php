@@ -248,15 +248,27 @@ function cometpro_portfolio_custom_post_type() {
         'supports'           => array(
             'title',
             'editor',
-            'excerpt',
             'thumbnail',
             'revisions',
         ),
-        'taxonomies'         => array( 'category', 'post_tag' ),
+        'taxonomies'         => array( 'cometpro_portfolio_category' ),
         'menu_position'      => 5,
         'exclude_from_search'=> false
     );
     register_post_type( 'portfolio', $args );
+
+    // Taxonomies for Portfolio
+    $labels = [
+        'name'         => 'Types',
+        'add_new'      => 'Add new type',
+        'add_new_item' => 'Add new type',
+    ];
+    $args = [
+        'labels'       => $labels,
+        'public'       => true,
+        'hierarchical' => true,
+    ];
+    register_taxonomy( 'cometpro_portfolio_category', 'portfolio', $args );
 }
 add_action( 'init','cometpro_portfolio_custom_post_type' );
 
