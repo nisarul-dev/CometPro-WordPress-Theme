@@ -135,6 +135,15 @@ if( file_exists( get_template_directory() . '/inc/lib/redux-framework/sample/bar
 }
 
 /**
+ * TGM Plugin Activation - The best way to require and recommend plugins for WordPress themes (and other plugins)
+ *
+ * @version 2.6.1
+ */
+if( file_exists( get_template_directory() . '/inc/lib/TGM/tgm-config.php' ) ) {
+    require_once get_template_directory() . '/inc/lib/TGM/tgm-config.php';
+}
+
+/**
  * Custom Nav Walker Class - Commetpro_Header_Nav_Menu
  */
 if( file_exists( get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php' ) ) {
