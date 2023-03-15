@@ -339,7 +339,8 @@ section.colored {
   margin-left: auto;
   margin-right: 0;
 }
-.btn {
+.btn,
+#comment-submit {
   padding: 0 28px;
   height: 55px;
   line-height: 53px;
@@ -351,6 +352,9 @@ section.colored {
   transition: all .3s ease;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
+}
+#comment-submit {
+  border: 1px solid transparent;
 }
 .btn > span i {
   margin-left: 0;
@@ -457,12 +461,14 @@ section.colored {
 }
 .btn-color:hover,
 .btn-color:active,
-.btn-color:focus {
+.btn-color:focus,
+#comment-submit:hover {
   background-color: #f25375;
   border-color: #f25375;
   color: #fff;
 }
-.btn-color-out {
+.btn-color-out,
+#comment-submit {
   color: #EF2D56;
   border-color: #EF2D56;
   background-color: transparent;
@@ -2043,6 +2049,9 @@ section.dark .icon-box-small.boxed {
 .contact-form {
   margin: 0 auto;
 }
+.comment-form .form-submit {
+  text-align: right;
+}
 .contact-form .form-group {
   margin-bottom: 20px;
 }
@@ -2741,6 +2750,10 @@ section.parallax .countdown span {
 #comments h5 {
   font-size: 13px;
   letter-spacing: 2px;
+}
+#comments h5.comment-title {
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 .comments-list {
   list-style: none;

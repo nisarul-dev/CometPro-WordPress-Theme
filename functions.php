@@ -17,6 +17,7 @@ function cometpro_setup_theme() {
     // Theme supports
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
+    add_theme_support('html5', 'comment-form');
 
     // Post Formats
     add_theme_support( 'post-formats', [
@@ -148,6 +149,13 @@ if( file_exists( get_template_directory() . '/inc/lib/TGM/tgm-config.php' ) ) {
  */
 if( file_exists( get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php' ) ) {
     require_once get_template_directory() . '/inc/custom-mega-menu/custom-nav-walker.php';
+}
+
+/**
+ * Custom Nav Walker Class - Cometpro_Comment_Walker
+ */
+if( file_exists( get_template_directory() . '/inc/custom-comment-walker/custom-comment-walker.php' ) ) {
+    require_once get_template_directory() . '/inc/custom-comment-walker/custom-comment-walker.php';
 }
 
 /**

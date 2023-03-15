@@ -5,7 +5,28 @@
               </div>
               <div class="post-media"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
               <div class="post-body">
-                <?php echo wp_trim_words( get_the_content(), 50, '' ); ?>
+                <?php
+                  if ( is_single() ) {
+                    the_content();
+                  } else {
+                    echo wp_trim_words( get_the_content(), 50, '' );
+                  }
+                ?>
+                <?php if( ! is_single() ) : ?>
                 <p><a href="<?php the_permalink(); ?>" class="btn btn-color btn-sm">Read More</a></p>
+                <?php endif; ?>
+
               </div>
             </article>
+
+            <div id="comment">
+              <?php if ( comments_open() ) {
+                  comments_template();
+                } else {
+                  echo "<br>\n<h4>";
+                  _e( "Comments Are Closed!", 'cometpro');
+                  echo '</h4>';
+                }
+              ?>
+            </div>
+
